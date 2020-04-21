@@ -8,9 +8,11 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js' %>
 </head>
 
-<body class="section">
+<body>
+  <%= render 'layouts/partials/navbar' %>
   <div class="container">
     <%= yield %>
   </div>
