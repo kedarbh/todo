@@ -5,15 +5,15 @@
   <title>Todo</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js' %>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js' %>
 </head>
 
 <body>
   <%= render 'layouts/partials/navbar' %>
-
   <div class="section">
     <div class="columns">
       <div class="column is-one-quarter is-hidden-mobile has-background-warning">
