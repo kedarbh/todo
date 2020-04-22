@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bulma/bulma";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

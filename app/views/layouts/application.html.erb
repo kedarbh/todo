@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 
 <head>
   <title>Todo</title>
@@ -13,8 +13,17 @@
 
 <body>
   <%= render 'layouts/partials/navbar' %>
-  <div class="container">
-    <%= yield %>
+
+  <div class="section">
+    <div class="columns">
+      <div class="column is-one-quarter is-hidden-mobile has-background-warning">
+        <%= render "layouts/partials/sidebar" %>
+      </div>
+      <div class="column has-background-primary is-three-quarters">
+        <%= yield %>
+      </div>
+    </div>
+
   </div>
 
 </body>

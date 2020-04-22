@@ -1,4 +1,4 @@
-<nav class="navbar is-danger is-size-4" role="navigation" aria-label="main navigation">
+<%# <nav class="navbar is-danger is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <span class="icon">
@@ -8,27 +8,76 @@
         TODO
       </strong>
     </a>
+    <a class="navbar-item" href="/">
+      <div class="level-item">
+        <div class="field has-addons">
+          <p class="control">
+            <input class="input" type="text" placeholder="Find a task">
+          </p>
+          <p class="control">
+            <button class="button">
+              Search
+            </button>
+          </p>
+        </div>
+      </div>
+    </a>
   </div>
-  <div id="navbarTop" class="navbar-menu">
-    <div class="navbar-start">
+  <div id="navbarTop">
+    <div class=" navbar-end">
       <a class="navbar-item">
-        Searchbox Here
+        <span class="icon is-large">
+          <ion-icon name="add-circle-sharp"></ion-icon>
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span class="icon is-large">
+          <ion-icon name="notifications"></ion-icon>
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span class="icon is-large">
+          <ion-icon name="settings-sharp"></ion-icon>
+        </span>
       </a>
     </div>
   </div>
-
-  <div class="navbar-end">
-    <div class="navbar-item">
-      <span class="icon is-large">
-        <ion-icon name="add-circle-sharp"></ion-icon>
-      </span>
-      <span class="icon is-large">
-        <ion-icon name="notifications"></ion-icon>
-      </span>
-      <span class="icon is-large">
-        <ion-icon name="settings-sharp"></ion-icon>
-      </span>
-    </div>
+</nav> %>
+<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <span class="icon">
+      <ion-icon name="checkbox"></ion-icon>
+    </span>
+    <strong>
+      TODO
+    </strong>
   </div>
+</nav>
+
+
+<nav class="navbar is-danger is-fixed-top" role="navigation" aria-label="top navigation">
+  <div class="navbar-brand">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+
+      </a>
+    </div>
+    <div class="navbar-end">
+      <a class="navbar-item">
+        <span class="icon is-large">
+          <ion-icon name="add-circle-sharp"></ion-icon>
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span class="icon is-large">
+          <ion-icon name="notifications"></ion-icon>
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span class="icon is-large">
+          <ion-icon name="settings-sharp"></ion-icon>
+        </span>
+      </a>
+    </div>
   </div>
 </nav>
