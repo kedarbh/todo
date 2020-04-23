@@ -1,124 +1,109 @@
-<div>
-  <nav class="bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
-          <div class="flex-shrink-0 text-sm font-medium text-white">
-            <svg class="h-12 w-15 fill-current" viewBox="0 0 59.87 19.88">
-              <path
-                d="M45.69 4.81l-2.84 4.4V5.79h-9v9h9v-1l4.56-7.94-.67-.39zm-9.84 8v-5h5v2.42L38.49 8l-1 1.74 3.36 2.89v.16zm-22.5 2h9v-9h-9zm2-7h5v5h-5zm8.25 7h7.69a1.31 1.31 0 001.31-1.31V7.09a1.31 1.31 0 00-1.31-1.3H23.6zm2-7h5v5h-5zm-12.5 0h-4v7h-2v-7h-4v-2h10z"
-              />
-            </svg>
-          </div>
-          <div>
-            <div class="ml-auto flex items-baseline">
-              <input
-                class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-md px-4 block w-full appearance-none leading-normal"
-                type="search"
-                placeholder="search"
-              />
-            </div>
-          </div>
-        </div>
+<!-- Top Navigation -->
+<nav class="flex justify-between my-2 px-4 py-2 border-b-2 border=gray-200">
+  <!-- search box -->
+  <div class="w-full lg:px-6 xl:w-3/4 xl:px-12">
+    <%= render 'layouts/partials/searchbox' %>
+  </div>
+  <!-- end of search box -->
+  <!-- Control links -->
+  <div class="">
+    <div class="ml-4 flex items-center md:ml-6">
+      <button
+        class="p-1 border-2 border-transparent text-gray-900 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+        aria-label="New Task"
+      >
+        <svg viewBox="0 0 23.999 23.999" class="fill-current h-4 w-4">
+          <path d="M13 11V1h-2v10H1v1.999h10v10h2v-10h10v-2z" />
+        </svg>
+      </button>
+      <button
+        class="p-1 border-2 border-transparent text-gray-900 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+        aria-label="Notifications"
+      >
+        <svg class="fill-current h-4 w-4" viewBox="0 0 18 19.985">
+          <path
+            d="M3 7.985a6 6 0 014.03-5.67 2 2 0 113.95 0A6 6 0 0115 7.985v6l3 2v1H0v-1l3-2zm8 10a2 2 0 01-4 0z"
+          />
+        </svg>
+      </button>
+      <button
+        class="p-1 border-2 border-transparent text-gray-900 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+        aria-label="settings"
+      >
+        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+          <path
+            d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94a7.075 7.075 0 011.7-.7L9 0h2l.8 3.24a7.075 7.075 0 011.7.7l2.86-1.72 1.42 1.42-1.72 2.86a7.075 7.075 0 01.7 1.7L20 9v2l-3.24.8a7.075 7.075 0 01-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72a7.075 7.075 0 01-1.7.7L11 20H9l-.8-3.24a7.075 7.075 0 01-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86a7.075 7.075 0 01-.7-1.7L0 11V9l3.24-.8a7.075 7.075 0 01.7-1.7zM10 13a3 3 0 10-3-3 3 3 0 003 3z"
+          />
+        </svg>
+      </button>
+
+      <!-- Profile dropdown -->
+      <div class="ml-3 relative" x-data="{ open: false }">
         <div>
-          <div class="ml-4 flex items-center md:ml-6">
-            <button
-              class="p-1 border-2 border-transparent text-gray-400 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
-              aria-label="New Task"
-            >
-              <svg viewBox="0 0 23.999 23.999" class="fill-current h-4 w-4">
-                <path d="M13 11V1h-2v10H1v1.999h10v10h2v-10h10v-2z" />
-              </svg>
-            </button>
-            <button
-              class="p-1 border-2 border-transparent text-gray-400 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
-              aria-label="Notifications"
-            >
-              <svg class="fill-current h-4 w-4" viewBox="0 0 18 19.985">
-                <path
-                  d="M3 7.985a6 6 0 014.03-5.67 2 2 0 113.95 0A6 6 0 0115 7.985v6l3 2v1H0v-1l3-2zm8 10a2 2 0 01-4 0z"
-                />
-              </svg>
-            </button>
-            <button
-              class="p-1 border-2 border-transparent text-gray-400 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
-              aria-label="Notifications"
-            >
-              <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-                <path
-                  d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94a7.075 7.075 0 011.7-.7L9 0h2l.8 3.24a7.075 7.075 0 011.7.7l2.86-1.72 1.42 1.42-1.72 2.86a7.075 7.075 0 01.7 1.7L20 9v2l-3.24.8a7.075 7.075 0 01-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72a7.075 7.075 0 01-1.7.7L11 20H9l-.8-3.24a7.075 7.075 0 01-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86a7.075 7.075 0 01-.7-1.7L0 11V9l3.24-.8a7.075 7.075 0 01.7-1.7zM10 13a3 3 0 10-3-3 3 3 0 003 3z"
-                />
-              </svg>
-            </button>
+          <button
+            class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-solid"
+            id="user-menu"
+            aria-label="User menu"
+            aria-haspopup="true"
+            @click="open = true"
+          >
+            <img
+              class="h-8 w-8 rounded-full hover:shadow-outline"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+          </button>
+        </div>
+        <!--
+          Profile dropdown panel, show/hide based on dropdown state.
 
-            <!-- Profile dropdown -->
-            <div class="ml-3 relative" x-data="{ open: false }">
-              <div>
-                <button
-                  class="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:shadow-solid"
-                  id="user-menu"
-                  aria-label="User menu"
-                  aria-haspopup="true"
-                  @click="open = true"
-                >
-                  <img
-                    class="h-8 w-8 rounded-full hover:shadow-outline"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </button>
-              </div>
-              <!--
-                Profile dropdown panel, show/hide based on dropdown state.
-
-                Entering: "transition ease-out duration-100"
-                  From: "transform opacity-0 scale-95"
-                  To: "transform opacity-100 scale-100"
-                Leaving: "transition ease-in duration-75"
-                  From: "transform opacity-100 scale-100"
-                  To: "transform opacity-0 scale-95"
-              -->
-              <div
-                class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
-                x-show="open"
-                x-transition:enter="transition ease-out duration-100"
-                x-transition:enter-start="transform opacity-0 scale-95"
-                x-transition:enter-end="transform opacity-100 scale-100"
-                x-transition:leave="transition ease-in duration-75"
-                x-transition:leave-start="transform opacity-100 scale-100"
-                x-transition:leave-end="transform opacity-0 scale-95"
-                @click.away="open=false"
-              >
-                <div
-                  class="py-1 rounded-md bg-white shadow-xs"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu"
-                >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    role="menuitem"
-                    >Your Profile</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    role="menuitem"
-                    >Settings</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    role="menuitem"
-                    >Sign out</a
-                  >
-                </div>
-              </div>
-            </div>
+          Entering: "transition ease-out duration-100"
+            From: "transform opacity-0 scale-95"
+            To: "transform opacity-100 scale-100"
+          Leaving: "transition ease-in duration-75"
+            From: "transform opacity-100 scale-100"
+            To: "transform opacity-0 scale-95"
+        -->
+        <div
+          class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
+          x-show="open"
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          @click.away="open=false"
+        >
+          <div
+            class="py-1 rounded-md bg-white shadow-xs"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="user-menu"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              >Your Profile</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              >Settings</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+              >Sign out</a
+            >
           </div>
         </div>
       </div>
     </div>
-  </nav>
-</div>
+  </div>
+  <!-- end of control box -->
+</nav>
+<!-- End of top navigation -->

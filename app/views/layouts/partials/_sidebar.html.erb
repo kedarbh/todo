@@ -1,26 +1,84 @@
-<ul>
-  <li>
-    <span class="icon is-large">
-      <ion-icon name="settings-sharp"></ion-icon>
-    </span>
-    <span>
-      Main
-    </span>
-  </li>
-  <li>
-    <span class="icon is-large">
-      <ion-icon name="calendar-outline"></ion-icon>
-    </span>
-    <span>
-      Today
-    </span>
-  </li>
-  <li>
-    <span class="icon is-large">
-      <ion-icon name="settings-sharp"></ion-icon>
-    </span>
-    <span>
-      Weeks
-    </span>
-  </li>
-</ul>
+<div class="flex h-screen">
+  <div class="hidden md:block bg-gray-100 w-64 p-4 mt-1 border-r">
+    <!-- Brand Item -->
+    <div class="flex justify-center items-center text-gray-800">
+      <svg class="h-12 w-15 flex-shrink-0" viewBox="0 0 59.87 19.88">
+        <path
+          d="M45.7 4.8l-2.8 4.4V5.8h-9v9h9v-1l4.6-7.9-.7-.4-1.1-.7zm-9.9 8v-5h5v2.4L38.5 8l-1 1.7 3.4 2.9v.2h-5.1zm-22.5 2h9v-9h-9v9zm2-7h5v5h-5v-5zm8.8 7h4.4c2.2 0 4.1-1.8 4.1-4.1v-.8c0-2.2-1.8-4.1-4.1-4.1h-4.4c-.3 0-.5.2-.5.5v7.9c0 .4.2.6.5.6zm1.5-7h2.8c1.2 0 2.2 1 2.2 2.2v.5c0 1.2-1 2.2-2.2 2.2h-2.8V7.8zm-12.5 0h-4v7h-2v-7h-4v-2h10v2z"
+        />
+      </svg>
+    </div>
+    <!-- End of brand item -->
+    <div class="mt-6">
+      <div>
+        <h2 class="uppercase text-lg font-bold text-gray-700">
+          Tasks
+        </h2>
+      </div>
+      <div class="mt-2">
+        <ul>
+          <li>
+            <button
+              class="w-full flex items-center hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 rounded-lg px-2 py-1"
+            >
+              <svg class="fill-current h-4 w-4" viewBox="0 0 15.24 15.24">
+                <path
+                  d="M2.18 4.35a2.18 2.18 0 112.17-2.17 2.17 2.17 0 01-2.17 2.17zm5.44 0a2.18 2.18 0 112.17-2.17 2.18 2.18 0 01-2.17 2.17zm5.44 0a2.18 2.18 0 112.18-2.17 2.18 2.18 0 01-2.18 2.17zM2.18 9.79a2.18 2.18 0 112.17-2.17 2.17 2.17 0 01-2.17 2.17zm5.44 0a2.18 2.18 0 112.17-2.17 2.18 2.18 0 01-2.17 2.17zm5.44 0a2.18 2.18 0 112.18-2.17 2.18 2.18 0 01-2.18 2.17zM2.18 15.24a2.18 2.18 0 112.17-2.18 2.18 2.18 0 01-2.17 2.18zm5.44 0a2.18 2.18 0 112.17-2.18 2.19 2.19 0 01-2.17 2.18zm5.44 0a2.18 2.18 0 112.18-2.18 2.19 2.19 0 01-2.18 2.18z"
+                />
+              </svg>
+              <div class="w-full flex justify-between items-center ml-2">
+                <span>All</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button
+              class="w-full flex items-center hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 rounded-lg px-2 py-1"
+            >
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 21.77 19.59">
+                <g>
+                  <path
+                    d="M0 2.18A2.19 2.19 0 012.18 0h17.41a2.18 2.18 0 012.18 2.18v15.23a2.19 2.19 0 01-2.18 2.18H2.18A2.18 2.18 0 010 17.41zm2.18 2.17v13.06h17.41V4.35z"
+                  />
+                  <text x="3.5" y="15" class="text-xs fill-current">
+                    <%= Time.now.day %>
+                  </text>
+                </g>
+              </svg>
+              <div class="w-full flex justify-between items-center ml-2">
+                <span>Today</span>
+                <span class="text-xs font-semibold">5</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button
+              class="w-full flex items-center hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 rounded-lg px-2 py-1"
+            >
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 19.59 21.77">
+                <path
+                  d="M2.18 2.18h15.23a2.18 2.18 0 012.18 2.17v15.24a2.19 2.19 0 01-2.18 2.18H2.18A2.18 2.18 0 010 19.59V4.35a2.18 2.18 0 012.18-2.17zm0 4.35v13.06h15.23V6.53zM4.35 0h2.18v2.18H4.35zm8.71 0h2.18v2.18h-2.18zM4.35 9.79h2.18V12H4.35zm0 4.36h2.18v2.17H4.35zm4.36-4.36h2.17V12H8.71zm0 4.36h2.17v2.17H8.71zm4.35-4.36h2.18V12h-2.18zm0 4.36h2.18v2.17h-2.18z"
+                />
+              </svg>
+              <div class="w-full flex justify-between items-center ml-2">
+                <span class="ml-2">Week</span>
+                <span class="text-xs font-semibold">15</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End of sidebar -->
+  <!-- Main content -->
+  <div class="block flex-1 min-w-0 bg-white">
+    <!-- Top Navigation -->
+    <%= render 'layouts/partials/navbar' %>
+    <!-- Task Area -->
+    <div class="p-4">
+      <%= yield %>
+    </div>
+    <!-- End of task area -->
+  </div>
+</div>
