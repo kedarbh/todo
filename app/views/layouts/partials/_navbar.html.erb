@@ -1,7 +1,11 @@
 <!-- Top Navigation -->
-<nav class="flex justify-between my-2 px-4 py-2 border-b-2 border=gray-200">
+<nav
+  class="flex justify-between items-center my-2 px-4 py-2 border-b-2 border-gray-200"
+>
+  <%= render 'layouts/partials/mobilenav' %>
+
   <!-- search box -->
-  <div class="w-full lg:px-6 xl:w-3/4 xl:px-12">
+  <div class="w-auto flex-grow lg:px-6 xl:w-3/4 xl:px-12">
     <%= render 'layouts/partials/searchbox' %>
   </div>
   <!-- end of search box -->
@@ -38,14 +42,14 @@
       </button>
 
       <!-- Profile dropdown -->
-      <div class="ml-3 relative" x-data="{ open: false }">
+      <div class="ml-3 relative">
         <div>
           <button
             class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-solid"
             id="user-menu"
             aria-label="User menu"
             aria-haspopup="true"
-            @click="open = true"
+            @click="isDropdownActive = true"
           >
             <img
               class="h-8 w-8 rounded-full hover:shadow-outline"
@@ -56,7 +60,6 @@
         </div>
         <!--
           Profile dropdown panel, show/hide based on dropdown state.
-
           Entering: "transition ease-out duration-100"
             From: "transform opacity-0 scale-95"
             To: "transform opacity-100 scale-100"
@@ -66,14 +69,14 @@
         -->
         <div
           class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
-          x-show="open"
+          x-show="isDropdownActive"
           x-transition:enter="transition ease-out duration-100"
           x-transition:enter-start="transform opacity-0 scale-95"
           x-transition:enter-end="transform opacity-100 scale-100"
           x-transition:leave="transition ease-in duration-75"
           x-transition:leave-start="transform opacity-100 scale-100"
           x-transition:leave-end="transform opacity-0 scale-95"
-          @click.away="open=false"
+          @click.away="isDropdownActive=false"
         >
           <div
             class="py-1 rounded-md bg-white shadow-xs"
