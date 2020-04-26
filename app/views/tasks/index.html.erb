@@ -1,34 +1,43 @@
 <p id="notice"><%= notice %></p>
-<h2 class="title is-5 is-capitalized ">Project Name || Default to today </h2>
 
-<table>
-  <thead class="">
-    <tr>
-      <th>Title</th>
-      <%# <th>Description</th> %>
-      <th>Due date</th>
-      <th>Priority</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2 class="font-bold text-lg text-gray-700 uppercase">Today<span class="text-xs font-normal text-gray-400"> <%= DateTime.now.strftime( "%F" ) %> </span></h2>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.title %></td>
-      <%# <td> %>
-      <%# task.description %>
-      <%# </td> %>
-      <td><%= task.due_date %></td>
-      <td><%= task.priority %></td>
-      <td><%= link_to 'Show', task %></td>
-      <td><%= link_to 'Edit', edit_task_path(task) %></td>
-      <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div>
+  <% @tasks.each do |task| %> <% if (task.due_date).strftime( "%y %d %m" ) == DateTime.now.strftime( "%y %d %m" ) %>
+  <div class="m-2 border rounded shadow">
+    <div class="p-4">
+      <input type="checkbox" class="mr-2">
+      <%= link_to task.title, task %>
+    </div>
+    <div class="flex justify-between m-2">
+      <div>
+        <%= (task.due_date).strftime( "%F" ) %>
+      </div>
+      <div>
+        <% if task.priority === 1 %>
+        Urgent
+        <% elsif task.priority === 2 %>
+        High
+        <% elsif task.priority === 3 %>
+        Medium
+        <% else %>
+        Low
+        <% end %>
+      </div>
+      <div>
+        Description
+      </div>
+      <div><%= link_to 'Edit', edit_task_path(task) %></div>
+    </div>
 
-<br>
+  </div>
+  <% end %> <% end %>
+</div>
 
-<%= link_to 'New Task', new_task_path, class: "button is-link" %>
+<%= link_to 'New Task', new_task_path, class: "mt-6 bg-black text-gray-100 px-2 py-1 rounded" %>
+
+
+
+
+<%# link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you
+        sure?' } %>
