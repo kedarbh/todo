@@ -7,7 +7,20 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-require("../css/application.css");
+require("../css/application.css"); //import tailwindcss
+require("flatpickr/dist/flatpickr.css");
+
+import flatpickr from "flatpickr";
+
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("[data-behavior = 'flatpickr']", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    defaultDate: "today",
+  });
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
