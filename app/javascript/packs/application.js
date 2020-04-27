@@ -18,7 +18,8 @@ document.addEventListener("turbolinks:load", () => {
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     minDate: "today",
-    defaultDate: "today",
+    // defaultDate: "today",
+    // TODO: can add time by enableTime:true nocalendar: true dateFormat:"H:i" for reminder
   });
 });
 

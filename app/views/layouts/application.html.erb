@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class="flex h-screen" x-data="{ isDropdownActive: false, isSidebarActive: false }">
+  <div class="flex h-screen" x-data="{ isDropdownActive: false, isSidebarActive: false, modalTask: false, disabled:true, title: '', due_date: '' }">
     <!-- Sidebar -->
     <%= render 'layouts/partials/sidebar' %>
     <!-- End of sidebar -->
@@ -29,7 +29,6 @@
       <!-- End of task area -->
     </div>
   </div>
-
 
 
 </body>
