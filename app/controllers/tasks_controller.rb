@@ -8,6 +8,10 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @task = Task.new
+
+    # respond_to do |format|
+    #   format.json { render json: @tasks }
+    # end
   end
 
   # GET /tasks/1
