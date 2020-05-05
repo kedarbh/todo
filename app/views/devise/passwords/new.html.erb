@@ -1,38 +1,15 @@
-<div class="bg-gray-100 flex justify-center w-full max-w-x">
-  <div class="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 m-4 flex items-center">
-    <div class="hidden  text-red-100 bg-red-500 h-full md:flex items-center mr-4 px-4">
-      <a href="/" >
-        <svg class="h-12 w-13 fill-current flex-shrink-0" viewBox="0 0 59.87 19.88">
-          <path
-      d="M45.7 4.8l-2.8 4.4V5.8h-9v9h9v-1l4.6-7.9-.7-.4-1.1-.7zm-9.9 8v-5h5v2.4L38.5 8l-1 1.7 3.4 2.9v.2h-5.1zm-22.5 2h9v-9h-9v9zm2-7h5v5h-5v-5zm8.8 7h4.4c2.2 0 4.1-1.8 4.1-4.1v-.8c0-2.2-1.8-4.1-4.1-4.1h-4.4c-.3 0-.5.2-.5.5v7.9c0 .4.2.6.5.6zm1.5-7h2.8c1.2 0 2.2 1 2.2 2.2v.5c0 1.2-1 2.2-2.2 2.2h-2.8V7.8zm-12.5 0h-4v7h-2v-7h-4v-2h10v2z" />
-          </svg></a>
-      </div>
-      <div class="max-w-xs">
-        <div class="text-red-500 md:hidden mb-4">
-          <a href="/">
-            <svg class="h-12 w-13 fill-current flex-shrink-0" viewBox="0 0 59.87 19.88">
-              <path
-                d="M45.7 4.8l-2.8 4.4V5.8h-9v9h9v-1l4.6-7.9-.7-.4-1.1-.7zm-9.9 8v-5h5v2.4L38.5 8l-1 1.7 3.4 2.9v.2h-5.1zm-22.5 2h9v-9h-9v9zm2-7h5v5h-5v-5zm8.8 7h4.4c2.2 0 4.1-1.8 4.1-4.1v-.8c0-2.2-1.8-4.1-4.1-4.1h-4.4c-.3 0-.5.2-.5.5v7.9c0 .4.2.6.5.6zm1.5-7h2.8c1.2 0 2.2 1 2.2 2.2v.5c0 1.2-1 2.2-2.2 2.2h-2.8V7.8zm-12.5 0h-4v7h-2v-7h-4v-2h10v2z" />
-              </svg>
-            </a>
-          </div>
-          <h2>Forgot your password?</h2>
-          <p class="text-sm my-4">To reset your password, please enter email address of your account.</p>
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-            <div class="mt-4">
-              <%= f.label :email, class:"text-gray-800 text-sm font-bold mb-2" %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"shadow appearance-none border border-gray-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  %>
-            </div>
-            <div class="my-4">
-              <%= f.submit "Reset my password", class:"rounded w-full border py-1 px-3 text-sm text-red-100 bg-red-500 cursor-pointer" %>
-            </div>
-          <% end %>
-          <div class="text-sm text-center border-t pt-4">
-            <%= link_to "Go to login", new_session_path(resource_name), class:"hover:underline text-red-700" %><br />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-    </div>
+<h2>Forgot your password?</h2>
+<p class="text-sm my-4">To reset your password, please enter email address of your account.</p>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="mt-4">
+    <%= f.label :email, class:"text-gray-800 text-sm font-bold mb-2" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"shadow appearance-none border border-gray-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  %>
+  </div>
+  <div class="my-4">
+    <%= f.submit "Reset my password", class:"rounded w-full border py-1 px-3 text-sm text-red-100 bg-red-500 cursor-pointer" %>
+  </div>
+<% end %>
+<div class="text-sm text-center border-t pt-4">
+  <%= link_to "Go to login", new_session_path(resource_name), class:"hover:underline text-red-700" %><br />
+</div>
