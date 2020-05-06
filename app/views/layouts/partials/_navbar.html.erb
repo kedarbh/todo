@@ -3,7 +3,6 @@
   class="flex justify-between items-center my-2 px-4 py-2 border-b-2 border-gray-200"
 >
   <%= render 'layouts/partials/mobilenav' %>
-
   <!-- search box -->
   <div class="w-auto flex-grow lg:px-6 xl:w-3/4 xl:px-12">
     <%= render 'layouts/partials/searchbox' %>
@@ -28,37 +27,36 @@
           <path
             d="M3 7.985a6 6 0 014.03-5.67 2 2 0 113.95 0A6 6 0 0115 7.985v6l3 2v1H0v-1l3-2zm8 10a2 2 0 01-4 0z"
           />
-        </svg>
-      </button>
-      <button
+          </svg>
+        </button>
+        <button
         class="p-1 border-2 border-transparent text-gray-900 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
         aria-label="settings"
       >
-        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-          <path
+          <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+            <path
             d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94a7.075 7.075 0 011.7-.7L9 0h2l.8 3.24a7.075 7.075 0 011.7.7l2.86-1.72 1.42 1.42-1.72 2.86a7.075 7.075 0 01.7 1.7L20 9v2l-3.24.8a7.075 7.075 0 01-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72a7.075 7.075 0 01-1.7.7L11 20H9l-.8-3.24a7.075 7.075 0 01-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86a7.075 7.075 0 01-.7-1.7L0 11V9l3.24-.8a7.075 7.075 0 01.7-1.7zM10 13a3 3 0 10-3-3 3 3 0 003 3z"
           />
-        </svg>
-      </button>
-
-      <!-- Profile dropdown -->
-      <div class="ml-3 relative">
-        <div>
-          <button
+            </svg>
+          </button>
+          <!-- Profile dropdown -->
+          <div class="ml-3 relative">
+            <div>
+              <button
             class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-solid"
             id="user-menu"
             aria-label="User menu"
             aria-haspopup="true"
             @click="isDropdownActive = true"
           >
-            <img
+                <img
               class="h-8 w-8 rounded-full hover:shadow-outline"
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />
-          </button>
-        </div>
-        <!--
+                </button>
+              </div>
+              <!--
           Profile dropdown panel, show/hide based on dropdown state.
           Entering: "transition ease-out duration-100"
             From: "transform opacity-0 scale-95"
@@ -67,7 +65,7 @@
             From: "transform opacity-100 scale-100"
             To: "transform opacity-0 scale-95"
         -->
-        <div
+              <div
           class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
           x-show="isDropdownActive"
           x-transition:enter="transition ease-out duration-100"
@@ -78,35 +76,32 @@
           x-transition:leave-end="transform opacity-0 scale-95"
           @click.away="isDropdownActive=false"
         >
-          <div
+                <div
             class="py-1 rounded-md bg-white shadow-xs"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="user-menu"
           >
-            <a
+                  <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
               >Your Profile</a
             >
-            <a
+                  <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
               >Settings</a
             >
-            <a
-              href="#"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              >Sign out</a
-            >
+                  <%= link_to 'Sign Out', destroy_user_session_path,
+                  method: :delete,
+                  class:"block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- end of control box -->
-</nav>
-<!-- End of top navigation -->
+        <!-- end of control box -->
+      </nav>
+      <!-- End of top navigation -->
