@@ -7,7 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-require("../css/application.css"); //import tailwindcss
+require("../css/application.scss"); //import tailwindcss
 require("flatpickr/dist/flatpickr.css");
 
 import flatpickr from "flatpickr";
