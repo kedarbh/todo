@@ -9,10 +9,6 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @task = Task.new
-
-    # respond_to do |format|
-    #   format.json { render json: @tasks }
-    # end
   end
 
   # GET /tasks/1
@@ -20,9 +16,9 @@ class TasksController < ApplicationController
   def show; end
 
   # GET /tasks/new
-  # def new
-  #   @task = Task.new
-  # end
+  def new
+    @task = Task.new
+  end
 
   # GET /tasks/1/edit
   def edit; end
