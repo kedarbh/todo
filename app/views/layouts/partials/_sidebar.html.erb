@@ -2,7 +2,7 @@
 
 <div
   class="md:block bg-gray-100 w-64 p-4 mt-1 border-r"
-  :class="{ 'hidden' : !isSidebarActive}"
+  :class="{ 'hidden' : !isSidebarActive }"
   @click.away="isSidebarActive = false"
 >
   <!-- Brand Item -->
@@ -72,6 +72,17 @@
           </button>
         </li>
       </ul>
+    </div>
+  </div>
+
+  <div class="mt-6">
+  <div>
+      <h2 class="uppercase text-lg font-bold text-gray-700">
+        Projects
+      </h2>
+    </div>
+    <div class="mt-2">
+      <%= render partial: "projects/project", collection: @projects %>
     </div>
   </div>
 </div>

@@ -2,5 +2,5 @@
 
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, dependent: :destroy, counter_cache: true
 end

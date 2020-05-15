@@ -1,28 +1,29 @@
 <div class="m-2 border rounded shadow">
-    <div class="p-4">
-      <input type="checkbox" class="mr-2">
-      <%= link_to task.title, task %>
-    </div>
-    <div class="flex justify-between m-2">
-      <div>
-        <%= (task.due_date).strftime( "%F" ) %>
-      </div>
-      <div>
-        <% if task.priority === 1 %>
-        Urgent
-        <% elsif task.priority === 2 %>
-        High
-        <% elsif task.priority === 3 %>
-        Medium
-        <% else %>
-        Low
-        <% end %>
-      </div>
-      <div>
-        Description
-      </div>
-      <div><%= link_to 'Edit', edit_task_path(task) %></div>
-      <div><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you
-          sure?' } %></div>
-    </div>
+  <div class="p-4">
+    <input type="checkbox" class="mr-2">
+    <%= link_to task.title, task %>
   </div>
+  <div class="flex justify-between m-2">
+    <div>
+      <%= (task.due_date) %>
+      <%# (task.due_date).strftime( "%F" ) %>
+    </div>
+    <div>
+      <% if task.priority === 1 %>
+      Urgent
+      <% elsif task.priority === 2 %>
+      High
+      <% elsif task.priority === 3 %>
+      Medium
+      <% else %>
+      Low
+      <% end %>
+    </div>
+    <div>
+      Description
+    </div>
+    <div><%# link_to 'Edit', edit_task_path(task) %></div>
+    <div><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you
+          sure?' } %></div>
+  </div>
+</div>

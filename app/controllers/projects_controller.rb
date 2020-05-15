@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = current_user.projects.include(:tasks).all
   end
 
   # GET /projects/1
@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    @project = current_user.projects.new
   end
 
   # GET /projects/1/edit
@@ -24,8 +24,8 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-    @project[:user_id] = current_user.id
+    @project = current_user.projects.new(project_params)
+    # @project[:user_id] = current_user.id
 
     respond_to do |format|
       if @project.save
@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_project
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
