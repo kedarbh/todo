@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root 'tasks#index', as: :authenticated_root
-
+    resources :dashboards, only: :show
+    root 'dashboards#show', as: :authenticated_root
     resources :projects
     resources :tasks
   end
