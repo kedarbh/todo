@@ -7,8 +7,12 @@
 
 </div>
 
-<button class="mt-6 bg-black text-gray-100 px-2 py-1 rounded" @click="modalTask = true" x-show="!modalTask">New Task
+<button class="mt-6 bg-black text-gray-100 px-2 py-1 rounded"
+@click="modalTask = true"
+x-show="!modalTask">New Task
 </button>
 <div x-show="modalTask" class="m-2">
-  <%= render 'form', task: @task %>
+  <%= render 'form' %>
 </div>
+
+

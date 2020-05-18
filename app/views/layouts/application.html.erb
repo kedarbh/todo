@@ -13,7 +13,14 @@
 </head>
 
 <body>
-  <div class="flex h-screen" x-data="{ isDropdownActive: false, isSidebarActive: false, modalTask: false, disabled:true, title: '', due_date: '' }">
+  <div class="flex h-screen"
+    x-data = "{ isDropdownActive: false,
+    isSidebarActive: false,
+    modalTask: false,
+    disabled:true,
+    title: '',
+    due_date: '',
+    modalProject:false }">
     <!-- Sidebar -->
 
     <%= render 'layouts/partials/sidebar' %>
@@ -29,7 +36,7 @@
       <!-- End of task area -->
     </div>
   </div>
-  <%= debug(params) if Rails.env.development? %>
+  <%# debug(params) if Rails.env.development? %>
 </body>
 
 </html>

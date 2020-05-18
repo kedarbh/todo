@@ -7,8 +7,10 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    @task = Task.new
+    @project = Project.new
     if params[:project_id]
-      @tasks = Task.where(:project_id => params[:project_id])
+      @tasks = Task.where(project_id: params[:project_id])
       @projects = current_user.projects.all
     else
       @projects = current_user.projects.all
@@ -37,7 +39,7 @@ class TasksController < ApplicationController
       if @task.save
         # format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.html { redirect_to tasks_url, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.json { render :show, status: :created, location: @tasks }
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -79,6 +81,7 @@ class TasksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def task_params
-    params.require(:task).permit(:title, :description, :due_date, :priority)
+    params.require(:task)
+          .permit(:title, :description, :due_date, :priority, :project_id)
   end
 end

@@ -76,12 +76,28 @@
   </div>
 
   <div class="mt-6">
-  <div>
-      <h2 class="uppercase text-lg font-bold text-gray-700">
+    <div class="flex items-center justify-between">
+      <div>
+        <h2 class="uppercase text-lg font-bold text-gray-700">
         Projects
       </h2>
+      </div>
+     <div>
+      <button class="p-1 border-2 border-transparent text-gray-900 ml-2 rounded-full hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
+      @click="modalProject = true"
+      aria-label="New Project">
+        <svg viewBox="0 0 23.999 23.999" class="fill-current h-4 w-4">
+          <path d="M13 11V1h-2v10H1v1.999h10v10h2v-10h10v-2z" />
+        </svg>
+      </button>
+      </div>
     </div>
     <div class="mt-2">
+    <div class="modal  fade text-dark" :class="{ 'show d-block': modalProject }"
+          x-show="modalProject"
+          role="dialog">
+  <%= render 'projects/form' %>
+</div>
       <%= render partial: "projects/project", collection: @projects %>
     </div>
   </div>
